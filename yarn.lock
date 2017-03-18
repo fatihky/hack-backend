@@ -217,7 +217,7 @@ kareem@1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/kareem/-/kareem-1.2.1.tgz#acdb8c8119845834abbfa58ade1cf9dea63dc752"
 
-lodash@^4.14.0:
+lodash@^4.14.0, lodash@^4.17.4:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
