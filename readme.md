@@ -2,9 +2,8 @@
 
 #### enpoints
 
-`POST /getRecord`
+`POST /getRecord`<br/>
 Description: get record by key field<br/>
-<br/>
 Accepted parameters:
 - `key`: string, key of the record<br/>
 
