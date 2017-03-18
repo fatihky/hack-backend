@@ -17,8 +17,20 @@ function controller(req, res) {
     });
   }
 
-  Record.find({key: req.body.key}).exec(function (err, results) {
-    if (err) {
+  Record.find({key: req.body.key})
+    .then(results => {
+      if (results.length === 0) {
+        return res.status(404).json({
+          stat: 'fail',
+          error: {
+            message: 'no records found for this key'
+          }
+        });
+      }
+
+      res.json(results[0]);
+    })
+    .catch(err => {
       console.error('kayit aranirken hata olustu.', err);
       return res.status(500).json({
         stat: 'fail',
@@ -26,19 +38,7 @@ function controller(req, res) {
           message: 'internal server error occured, please try again later'
         }
       });
-    }
-
-    if (results.length === 0) {
-      return res.status(404).json({
-        stat: 'fail',
-        error: {
-          message: 'no records found for this key'
-        }
-      });
-    }
-
-    res.json(results[0]);
-  });
+    });
 }
 
 module.exports = controller;
